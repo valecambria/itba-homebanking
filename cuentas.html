@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- FUENTE 1 -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- FUENTE 2 -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200&family=Public+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- CHART.JS PARA EL GRAFICO -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/cuentas.css">
+</head>
+<body>
+    <div class="nav d-flex justify-content-between align-items-center">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            Homebanking ITBA
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="" target="">Inicio</a>
+          <a href="#" target="">Cuenta</a>
+          <a href="" target="">Transferencias</a>
+          <a href="" target="">Pagos</a>
+          <a href="" target="">Ayuda</a>
+          <a href="" target="">Cerrar Sesión</a>
+        </div>
+      </div>
+    <main class="d-flex align-items-center">
+        <div class="contenedor d-flex justify-content-center align-items-center gap-5 pt-5">
+            <div class="seccion-izquierda">
+                <div class="contenedor-saldo d-flex justify-content-center align-items-center">
+                    <div class="saldo">
+                        <h5 class="text-white">Saldo Disponible</h5>
+                        <h2 class="text-white" id="saldo-valor">$400,00</h2>
+                        <!-- Button trigger modal -->
+                    </div>
+                        <button id="ver-cvu" type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Ver CVU
+                        </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">CVU</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                    <div class="modal-body text-white">
+                                        0000003100045391071666
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn text-white" data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ultimas-transac">
+                    <div class="contendor-transac pt-3">
+                        <h2 class="text-white w-100 text-center">Últimos Movimientos</h2>
+                        <div class="movimientos">
+                            <div class="transfer-border d-flex justify-content-between ps-3 pe-3 pt-3">
+                                <div class="d-flex">
+                                    <span class="material-symbols-outlined fs-2 text-primary">
+                                        call_made
+                                    </span>
+                                    <div class="nombre-transfer ps-3">
+                                        <h5 class="fw-bold text-white">Lionel Messi</h5>
+                                        <p class="text-white-50">Transferencia Enviada</p>
+                                    </div>
+                                </div>
+                                <h3 class="text-white fw-bold">$10000,00</h3>
+                            </div>
+                            <div class="transfer-border d-flex justify-content-between ps-3 pe-3 pt-3">
+                                <div class="d-flex">
+                                    <span class="material-symbols-outlined fs-2 text-success">
+                                        call_received
+                                    </span>
+                                    <div class="nombre-transfer ps-3">
+                                        <h5 class="fw-bold text-white">Rodrigo De Paul</h5>
+                                        <p class="text-white-50">Transferencia Recibida</p>
+                                    </div>
+                                </div>
+                                <h3 class="text-white fw-bold">$500,00</h3>
+                            </div>
+                            <div class="transfer-border d-flex justify-content-between ps-3 pe-3 pt-3">
+                                <div class="d-flex">
+                                    <span class="material-symbols-outlined fs-2 text-primary">
+                                        call_made
+                                    </span>
+                                    <div class="nombre-transfer ps-3">
+                                        <h5 class="fw-bold text-white">Paulo Dybala</h5>
+                                        <p class="text-white-50">Transferencia Enviada</p>
+                                    </div>
+                                </div>
+                                <h3 class="text-white fw-bold">$7000,00</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seccion-derecha">
+                <div class="titulo pt-3">
+                    <h2 class="text-white w-100 text-center">Análisis de Gastos</h2>
+                </div>
+                <div class="contenedor-grafico d-flex justify-content-center">
+                    <div class="grafico">
+                        <canvas id="myChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-text d-flex justify-content-center align-items-center gap-5  w-100">
+            <a href="">PolITICAS DE SEGURIDAD</a>
+            <a href="">TERMINOS Y CONDICIONES</a>
+            <a href="">CONTACTO</a>
+            <div class="footer-img d-flex align-items-center gap-3">
+                <a href="https://www.instagram.com">
+                    <img src="https://logotipoz.com/wp-content/uploads/2021/10/instagram-2-1.svg" alt="Instagram Logo">
+                </a>
+                <a href="https://www.twitter.com">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3938/3938028.png" alt="Twitter Logo">
+                </a>
+                <a href="https://www.facebook.com">
+                    <img src="https://www.freepnglogos.com/uploads/facebook-logo-13.png" alt="Facebook Logo">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+                const ctx = document.getElementById("myChart");
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+    'Enviado',
+    'Recibido'
+],
+    datasets: [{
+    label: 'Resumen Histórico',
+    data: [90, 10],
+    backgroundColor: [
+      'rgb(54, 162, 235)',
+      'rgb(0, 204, 0)'
+    ],
+    hoverOffset: 4
+  }]
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
