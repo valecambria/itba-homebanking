@@ -27,17 +27,17 @@ header > h2 {
 }
 
 .i {
-    color: aqua;
+    color: red;
 }
 
 .t {
-    color: rgb(46, 184, 46);
-}
-
-.b {
     color: yellow;
 }
 
+.b {
+    color: green;
+}
+
 .a {
-    color: red;
+    color: aqua;
 }
