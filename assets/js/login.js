@@ -6,13 +6,16 @@ const mensajeError = document.getElementById('mensajeError')
 const usuario = "admin@gmail.com";
 const contraseña = "admin123"
 
+console.log(correo);
+
 boton.addEventListener("click", (e) => {
     e.preventDefault();
     let valorCorreo = correo[0].value;
     let valorContraseña = password[0].value;
+
     
-    if(valorCorreo === "admin@gmail.com" && valorContraseña === "admin123") {
-        console.log("CORRECTO")
+    if(valorCorreo == usuario && valorContraseña == contraseña ) {
+        console.log("CORRECTO");
         window.location = 'cuentas.html';
     }
     else {
