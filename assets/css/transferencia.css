@@ -118,7 +118,8 @@ body {
 main {
     min-height: 75vh;
     width: 100%;
-    background-color: #f4f4f4;
+    background-image: url(../img/circle-scatter-haikei\ \(1\).svg);
+    background-size:cover;
 }
 
 .contenedor {
@@ -242,5 +243,81 @@ footer {
     }
 }
 
+/*Transferencia*/
 
+.push-right-5{
+    padding-right: 5px;
+}
 
+.push-top-15{
+    padding-top:15px!important;
+}
+
+.card-options.space{
+    margin-bottom: unset;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    height: 72px;
+    width: 96%;
+}
+
+.card-options, .card-options.space {
+    box-shadow: 2px 6px 8px -8px rgba(27,35,51,.24),
+    2px 5px 17px -1px rgba(27,35,51.12);
+    background-color: #fff;
+}
+
+.card-options{
+    margin-right: 20px;
+    float: left;
+    position: relative;
+}
+
+.f-size-14 {
+    text-align: center;
+}
+
+h1,h5,h2,h3{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.transferencia, .transfer-border{
+    display: inline;
+}
+
+.opciones{
+    padding: 5%;
+    border-radius: 5%;
+    margin: 8%;
+    background-color: #e0e0e0;
+}
+
+.datos {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: space-between;
+    justify-content: center;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+  }
+  
+#CBU,#dinero{
+    text-align: center;
+    width: 500px;
+    margin-bottom: 10%;
+}
+
+#enviar{
+    width: 500px;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+}
